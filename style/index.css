@@ -1,0 +1,38 @@
+
+
+.jp-CodeCellCollapser {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  height: 100%;
+  position: absolute;
+  left: 5px;
+  top: 0;
+  z-index: 10000;
+  display: block;
+  border-radius: 2px;
+  box-sizing: border-box;
+}
+
+.jp-CodeCellCollapser:hover > button {
+  background-color: #ccc;
+}
+
+.jp-CodeCellCollapser>button {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  height: 100%;
+}
+
+.jp-Cell-inputAreaCollapsed .CodeMirror {
+  max-height: 24px;
+}
+
+.jp-Cell-inputAreaCollapsed .CodeMirror-line {
+  display: none;
+}
+
+.jp-Cell-inputAreaCollapsed .CodeMirror-line:nth-child(1) {
+  display: initial;
+}
