@@ -11,7 +11,7 @@ Collapses code cells in jupyterlab
 ## Install
 
 ```bash
-jupyter labextension install  @epi2melabs/jupyterlab-code-cell-collapser
+jupyter labextension install @epi2melabs/jupyterlab-code-cell-collapser
 ```
 
 ## Contributing
