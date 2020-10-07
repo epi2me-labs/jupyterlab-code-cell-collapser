@@ -2,8 +2,6 @@ import { ReactWidget } from '@jupyterlab/apputils';
 
 import { CodeCell } from '@jupyterlab/cells';
 
-import { CodeMirrorEditor } from "@jupyterlab/codemirror";
-
 import { caretDownIcon, caretUpIcon, LabIcon } from '@jupyterlab/ui-components';
 
 import React, { useState, useEffect } from 'react';
@@ -20,9 +18,9 @@ const CELL_INPUT_AREA_COLLAPSED_CLASS = 'jp-Cell-inputAreaCollapsed';
  * @param cell - The CodeCell parent.
  */
 const isFirstLineComment = (cell: CodeCell): boolean => {
-  const cm = (cell.editor as CodeMirrorEditor)['_editor']; // Find a better way
-  const pattern = /^#[\sa-zA-Z]+/i;
-  return !!pattern.test(cm.getLine(0));
+  const splitLines = (lines: string) => lines.split(/\r?\n/);
+  const firstLine = splitLines(cell.model.value.text);
+  return firstLine[0].startsWith('#');
 };
 
 
