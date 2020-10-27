@@ -46,6 +46,11 @@ const extension: JupyterFrontEndPlugin<void> = {
 
       const notebookCellCollapsers: INotebookCellCollapsers = {};
       const notebookPanel = nbTrack.currentWidget;
+
+      if (notebookPanel === null) {
+        return
+      }
+
       const notebook = nbTrack.currentWidget.content;
 
       notebookPanel.context.ready.then(async () => {
