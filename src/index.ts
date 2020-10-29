@@ -63,7 +63,9 @@ const extension: JupyterFrontEndPlugin<void> = {
 
         nbTrack.activeCellChanged.connect(() => {
           const cell: Cell = notebook.activeCell;
-          addCodeCellCollapser(cell, notebookCellCollapsers);
+          if (cell !== null) {
+            addCodeCellCollapser(cell, notebookCellCollapsers);
+          }
         });
 
       });
